@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>SergWedding - @ViewBag.Title</title>
+    <!-- Bootstrap core CSS -->
+    <link href="~/Content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template -->
+    <link href="~/Content/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <!-- Custom styles for this template -->
+
+    <link href="~/Content/css/agency.min.css" rel="stylesheet">
+    @RenderSection("head", false)
+
+
+</head>
+<body id="page-top" lang="he" dir="rtl">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top position-fixed" id="mainNav" style="font-size:medium;color: white;">
+        <left style="font-size:larger">
+            @Html.ActionLink("Serg-Wedding", "Index", "Cat", new { area = "" }, new { @class = "navbar-brand" })
+        </left> 
+ 
+        <div class="container-fluid" border="1">
+
+
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <right style="font-size:larger;">
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+
+                    <ul class="navbar-nav text-uppercase ml-auto">
+                        <li class="nav-item" style="font-size:medium;padding:12px">
+                            @Html.ActionLink("דיג'יי", "Dj", "Bus", new { area = "" }, new { @class = "navbar-brand" })
+                        </li>
+                        <li class="nav-item" style="font-size:medium;padding:12px">
+                            @Html.ActionLink("צילום אירועים", "Photography", "Bus", new { area = "" }, new { @class = "navbar-brand" })
+                        </li>
+                        <li class="nav-item" style="font-size:medium;padding:12px">
+                            @Html.ActionLink("תסרוקות כלה", "BrightHairdress", "Bus", new { area = "" }, new { @class = "navbar-brand" })
+                        </li>
+                        <li class="nav-item" style="font-size:medium;padding:12px">
+                            @Html.ActionLink("איפור כלות", "bridesmakeup", "Bus", new { area = "" }, new { @class = "navbar-brand" })
+                        </li>
+                        <li class="nav-item" style="font-size:medium;padding:12px">
+                            @Html.ActionLink("שמלות כלה", "WeddingDresses", "Bus", new { area = "" }, new { @class = "navbar-brand" })
+                        </li>
+                        <li class="nav-item" style="font-size:medium;padding:12px">
+                            @Html.ActionLink("חליפות חתן", "GroomSuit", "Bus", new { area = "" }, new { @class = "navbar-brand" })
+                        </li>
+                        <li class="nav-item" style="font-size:medium;padding:12px">
+                            @Html.ActionLink("הפקות חינה", "HennaProductions", "Bus", new { area = "" }, new { @class = "navbar-brand" })
+                        </li>
+                        <li class="nav-item" style="font-size:medium;padding:12px">
+                            @Html.ActionLink("משקאות", "Drinks", "Bus", new { area = "" }, new { @class = "navbar-brand" })
+                        </li>
+                    </ul>
+                </div>
+            </right>
+        </div>
+    </nav>
+    <header class="masthead">
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in"> </div>
+                <div class="intro-heading text-uppercase" style="font-family:Calibri Light;"> סֶרְגְ </div>
+                <div class="intro-heading text-uppercase" style="font-family:Calibri Light;">@ViewBag.Title</div>
+            </div>
+        </div>
+    </header>
+    @RenderBody()
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading text-uppercase">צור קשר</h2>
+                    <h3 class="section-subheading text-muted"> </h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control" id="name" type="text" placeholder="שם" required="required" data-validation-required-message="הקש את שמך">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" id="email" type="email" placeholder="אימייל" required="required" data-validation-required-message="Please enter your email address.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" id="phone" type="tel" placeholder="מספר טלפון" required="required" data-validation-required-message="Please enter your phone number.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <textarea class="form-control" id="message" placeholder="דברים שחשוב שנדע" required="required" data-validation-required-message="Please enter a message."></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div>
+                                <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">שלח</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; Samuel & Gize 2019</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap core JavaScript -->
+    <script src="~/Content/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="~/Content/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Contact form JavaScript -->
+    <script src="~/Content/js/jqBootstrapValidation.js"></script>
+    <script src="~/Content/js/contact_me.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="~/Content/js/agency.min.js"></script>
+</body>
+</html>

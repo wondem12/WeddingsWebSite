@@ -1,0 +1,114 @@
+﻿@model IEnumerable<Serg_1._0.Category>
+@{
+    ViewBag.Title = "הכל במקום אחד";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<article dir="rtl" lang="he"  >
+
+    <div class="about-link">
+        <center>
+            <h2 style="font-family:Calibri Light;">אודות </h2>
+            <h5 style="font-family:Calibri Light;">
+                סֶרְגְ הוא אתר קונספט שמרכז את כל נותני השירות מהעדה האתיופית לחתונות ואירועים<br>
+                זוגות צעירים יוכלו למצוא את כל מה שהם צריכים כדי לנהל את חתונתם<br>
+                הידעת: פירוש המילה סֶרְגְ באמהרית היא חתונה<br>
+            </h5>
+        </center>
+    </div>
+
+    <!-- Portfolio Grid -->
+    <section class="bg-light" id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading text-uppercase">קטגוריות</h2>
+                    <h3 class="section-subheading text-muted">כל אנשי השירות באתר</h3>
+                </div>
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-3 col-sm-6 portfolio-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fas fa-plus fa-3x"></i>
+                                </div>
+                            </div>
+                           <a href='@Url.Action( "" + @Html.DisplayFor(model => item.CatName) + "","Bus")' ><img class="img-fluid" src="~/Content/img/portfolio/@Html.DisplayFor(model => item.CatImage)" style="width:512px;height: 250px;" alt=""></a>
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>@Html.DisplayFor(model => item.CatName)</h4>
+                            <p class="text-muted">@Html.DisplayFor(model => item.CatDesc)</p>
+                        </div>
+                    </div>
+                }
+            </div> 
+        </div>
+    </section>
+    <section class="bg-light" id="team">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading text-uppercase"> צוות פיתוח האתר</h2>
+                    <h3 class="section-subheading text-muted"></h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" src="~/Content/img/team/1.jpg" alt="">
+                        <h4>Samuel Wondem</h4>
+                        <p class="text-muted">Lead Developer</p>
+                        <ul class="list-inline social-buttons">
+                            <li class="list-inline-item">
+                                <a href="#">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" src="~/Content/img/team/3.jpg" alt="">
+                        <h4>Gize Ajigo</h4>
+                        <p class="text-muted">Lead Developer</p>
+                        <ul class="list-inline social-buttons">
+                            <li class="list-inline-item">
+                                <a href="#">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://www.facebook.com/gize.ajigo">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://www.linkedin.com/in/gize-ajigo-01a775173/">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</article>

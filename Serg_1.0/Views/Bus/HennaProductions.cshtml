@@ -1,0 +1,111 @@
+﻿@model IEnumerable<Serg_1._0.Business>
+@{
+    ViewBag.Title = "הפקות חינה";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,200,500,600,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css">
+    <link href="~/Content/css/agency.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="~/Content/cssCard/material-cards.css" rel="stylesheet" />
+    <link href="~/Content/cssCard/csscard1.css" rel="stylesheet" />
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function () {
+            $('.material-card > .mc-btn-action').click(function () {
+                var card = $(this).parent('.material-card');
+                var icon = $(this).children('i');
+                icon.addClass('fa-spin-fast');
+
+                if (card.hasClass('mc-active')) {
+                    card.removeClass('mc-active');
+
+                    window.setTimeout(function () {
+                        icon
+                            .removeClass('fa-arrow-left')
+                            .removeClass('fa-spin-fast')
+                            .addClass('fa-bars');
+
+                    }, 800);
+                } else {
+                    card.addClass('mc-active');
+
+                    window.setTimeout(function () {
+                        icon
+                            .removeClass('fa-bars')
+                            .removeClass('fa-spin-fast')
+                            .addClass('fa-arrow-left');
+
+                    }, 800);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <section class="container">
+        <div class="row active-with-click" style="width:1200px;height:1100px">
+            @foreach (var item in Model.Where(n => n.CatID == 7))
+            {
+                <div class="col-md-4 col-sm-6 col-xs-6">
+                    <article class="material-card Red">
+                        <h2>
+                            <span>@Html.DisplayFor(model => item.BusinessName)</span>
+                            <i class="fa fa-fw fa-star"></i>
+                            <strong>
+                                @Html.DisplayFor(model => item.Location)
+                            </strong>
+                        </h2>
+
+                        <div class="mc-content">
+                            <div class="img-container">
+                                <img class="img-responsive" width="900" height="900" src="~/Content/img/portfolio/@Html.DisplayFor(model => item.BusinessImage)" />
+                            </div>
+                            <div class="mc-description">
+                                @Html.DisplayFor(model => item.BusinessDesc)
+                            </div>
+                        </div>
+                        <a class="mc-btn-action">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                        <div class="mc-footer">
+                            <br />
+                            <h4 style="color:black">
+                                @Html.DisplayFor(model => item.PhoneNumber)
+                            </h4>
+                            <a href="@Html.DisplayFor(model => item.FaceBook)" class="fa fa-fw fa-facebook"></a>
+                            <center> <a class="fas fa-thumbs-up"></a></center>
+                            <center> <a class="fa fa-comments-o"></a></center>
+                        </div>
+                    </article><br />
+                </div>
+            }
+
+        </div>
+    </section>
+    <div id="disqus_thread" style="width:100% ;border-radius:40px"></div>
+
+    <script>
+
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function () { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://serg-wedding.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+
+</body>
+
+
+
